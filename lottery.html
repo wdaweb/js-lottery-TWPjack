@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const rand = (min, max) => {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        }
+
+
+        function loter(x) {
+            let n = 0;
+            let all = [];
+            for (i = 0; i < 6; i++) {
+                n = rand(1, 38);
+
+                if (all.includes(n) == true) {
+                    i -= 1;
+                    continue;
+                } else if (all.includes(n) == false) {
+                    all.push(n);
+                }
+            }
+            document.write(`A區 ${all} <br>`);
+            document.write(`B區 ${rand(1, 8)}`);
+
+        }
+
+        loter();
+
+    </script>
+</body>
+
+</html>
